@@ -1,0 +1,45 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Giriş</title>
+    <style>
+        body {
+            background-image: url('../../assets/images/bg.png');
+        }
+    </style>
+    <link href="~/Areas/AdminPanel/Assets/Css/LoginDesign.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="loginFormContainer">
+        <div class="loginFormTitle">
+            <h3>Admin Login</h3>
+        </div>
+        <div class="loginFormContent">
+            @if (ViewBag.message != null)
+            {
+                <div style="color: #b13407">@ViewBag.message.Text</div>
+            }
+            @using (Html.BeginForm())
+            {
+                <div class="row">
+                    <input type="text" name="mail" class="textBox" />
+                </div>
+                <div class="row">
+                    <input type="password" name="password" class="textBox"/>
+                </div>
+                <div class="row">
+                    <input type="submit" value="Giriş Yap" class="textBox"/>
+                </div>
+            }
+        </div>
+
+    </div>
+</body>
+</html>

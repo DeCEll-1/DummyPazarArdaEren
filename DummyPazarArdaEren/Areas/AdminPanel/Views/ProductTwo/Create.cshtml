@@ -1,0 +1,80 @@
+﻿@model DummyPazarArdaEren.Models.Product
+@{
+    ViewBag.Title = "DP Ürün Ekle";
+    Layout = "~/Areas/AdminPanel/Views/Shared/_LayoutPageAdmin.cshtml";
+}
+
+
+<div class="form">
+    <div class="formtitle">
+        <h3>@Html.LabelFor(model => model.Name) Ekle</h3>
+    </div>
+</div>
+
+<div class="formcontent">
+    @if (ViewBag.message != null)
+    {
+        @ViewBag.message
+    }
+</div>
+
+<div class="form">
+    <div class="formcontent">
+
+        @using (Html.BeginForm("Create","ProductTwo",FormMethod.Post,new {enctype="multipart/form-data"}))
+        {
+            @Html.AntiForgeryToken();
+            <div>
+                @Html.LabelFor(model => model.Name) Adı:
+                <br />
+                @Html.EditorFor(model => model.Name, new { @class = "textboxcolored" })
+                <br />
+                @Html.ValidationMessageFor(model => model.Name)
+            </div>
+
+            <div>
+                <label>Kategori Seçiniz</label>
+                <br />
+                @Html.DropDownList("Category_ID", null, htmlAttributes: new { @class = "dropdown" })
+                <br />
+                @Html.ValidationMessageFor(model => model.Category_ID)
+            </div>
+
+            <div>
+                @Html.LabelFor(model => model.Description):
+                <br />
+                @Html.EditorFor(model => model.Description, new { @class = "textboxcolored" })
+                <br />
+                @Html.ValidationMessageFor(model => model.Description)
+            </div>
+
+            <div>
+                @Html.LabelFor(model => model.Price):
+                <br />
+                @Html.EditorFor(model => model.Price)
+                <br />
+                @Html.ValidationMessageFor(model => model.Price)
+            </div>
+
+            <div>
+                @Html.LabelFor(model => model.ImageBigPath):
+                <br />
+                <input type="file" name="imageBig" />
+            </div>
+
+            <div>
+                @Html.LabelFor(model => model.ImageIconPath):
+                <br />
+                /!\ Yükseklik 87px En 231px
+
+                <input type="file" name="imageIcon" />
+            </div>
+
+            <div>
+                <input type="submit" value="Kategori Ekle" />
+            </div>
+        }
+
+    </div>
+</div>
+

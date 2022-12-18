@@ -1,0 +1,56 @@
+﻿@model DummyPazarArdaEren.Models.Product
+@{
+    ViewBag.Title = "Düzenleme";
+    Layout = "~/Areas/AdminPanel/Views/Shared/_LayoutPageAdmin.cshtml";
+}
+
+<div class="form">
+    <div class="formtitle">
+        Ürün Düzenleme Ekranı
+    </div>
+    <div class="formcontent">
+        @if (ViewBag.Mesaj != null)
+        {
+            <div>
+                @ViewBag.Mesaj
+            </div>
+        }
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken();
+            @Html.HiddenFor(model => model.ID);
+            <div>
+                @Html.LabelFor(model => model.Name) Adı:
+                <br />
+                @Html.EditorFor(model => model.Name, new { @class = "textboxcolored" })
+                <br />
+                @Html.ValidationMessageFor(model => model.Name)
+            </div>
+
+            <div>
+                <label>Kategori Seçiniz</label>
+                <br />
+                @Html.DropDownList("Category_ID", null, htmlAttributes: new { @class = "dropdown" })
+                <br />
+                @Html.ValidationMessageFor(model => model.Category_ID)
+            </div>
+
+            <div>
+                @Html.LabelFor(model => model.Description):
+                <br />
+                @Html.EditorFor(model => model.Description, new { @class = "textboxcolored" })
+                <br />
+                @Html.ValidationMessageFor(model => model.Description)
+            </div>
+
+            <div>
+                @Html.LabelFor(model => model.Price):
+                <br />
+                @Html.EditorFor(model => model.Price)
+                <br />
+                @Html.ValidationMessageFor(model => model.Price)
+            </div>
+
+        }
+    </div>
+</div>

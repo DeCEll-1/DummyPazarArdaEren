@@ -17,11 +17,12 @@ html {
 }
 
 body {
-    margin: 0
+    margin: 0;
+    background-image: url('../images/bg.png');
 }
 
 article, aside, details, figcaption, figure, footer, header, main, menu, nav, section {
-    display: block;
+    display: block
 }
 
 summary {
@@ -255,63 +256,66 @@ h6 {
     background-color: #ff4b32;
 }
 
-.topbar {
-    top: 0px;
-    width: 100%;
-    position: fixed;
-    min-height:40px;
+.row {
+    margin-bottom: 3px;
+    margin-top: 3px;
 }
 
-.cikis {
-    margin-top:2.5px;
-    margin-bottom:2.5px;
-    padding: 4px 16px;
-    float: right;
-    border-radius:7px;
+.loginFormContainer {
+    width: 450px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 250px;
+}
+
+.loginFormContainer {
     border: 1px solid #2b7d6b;
+    font-family: Calibri;
+    background-color: #0A4F41;
 }
 
-.sidebar {
-    width: 15%;
-    height: 654px;
-    float: left;
+.loginFormTitle {
+    background-color: #025151;
+    padding: 10px;
+    border-bottom: 1px solid #0C332B;
+    color: #C0C0C0;
+    display: block;
 }
 
-
-.container {
-    padding: 0.01em 16px;
+.loginFormContent {
+    padding: 15px;
 }
 
-.sidebarmenu {
-    list-style-type: none;
-}
-
-    .sidebarmenu a li {
+    .loginFormContent input[type="text"] {
+        width: 100%;
         padding: 7px;
-        background-color: #556070;
-        text-decoration:none;   
+        border-radius: 3px;
     }
 
-    .sidebarmenu a {
-        text-decoration: none;
-        color:white;
-    }
-
-    .sidebarmenu li {
+    .loginFormContent input[type="password"] {
+        width: 100%;
         padding: 7px;
-        background: #b0a892;
-        border-bottom: solid 1px #b13407;
+        border-radius: 3px;
     }
 
-    .sidebarmenu a li:hover {
-        background-color: #C0C0C0;
+    .loginFormContent input[type="submit"] {
+        background-color: #1b2838;
+        color: white;
+        padding: 7px 25px;
+        text-align: center;
+        font-weight: 900;
+        border: 1px solid #025151;
+        border-radius: 5px;
+        margin-top: 10px;
     }
 
-.main {
+        .loginFormContent input[type="submit"]:hover {
+            background-color: #2a475e;
+            cursor: pointer;
+        }
+
+
+.textBox {
+    border: 1px solid #2b7d6b;
     background-color: #196252;
-    margin-top: 39px;
-    float: left;
-    padding: 10px 20px;
-    width: 85%;
 }
-

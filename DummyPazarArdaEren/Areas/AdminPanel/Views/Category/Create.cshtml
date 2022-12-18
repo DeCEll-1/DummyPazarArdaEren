@@ -1,0 +1,41 @@
+﻿@model DummyPazarArdaEren.Models.Categories
+@{
+    ViewBag.Title = "DP Kategori Ekle";
+    Layout = "~/Areas/AdminPanel/Views/Shared/_LayoutPageAdmin.cshtml";
+}
+
+
+
+<div class="form">
+    <div class="formtitle">
+        <h3>Kategori Ekle</h3>
+    </div>
+</div>
+<div class="form">
+    <div class="formcontent">
+
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken();
+            <div>
+                @Html.LabelFor(model => model.Name):
+                <br />
+                @Html.EditorFor(model => model.Name)
+                <br />
+                @Html.ValidationMessageFor(model => model.Name)
+            </div>
+
+            <div>
+                @Html.LabelFor(model => model.Description):
+                <br />
+                @Html.EditorFor(model => model.Description)
+                <br />
+                @Html.ValidationMessageFor(model => model.Description)
+            </div>
+            <div>
+                <input type="submit" value="Ürün Ekle" />
+            </div>
+        }
+
+    </div>
+</div>

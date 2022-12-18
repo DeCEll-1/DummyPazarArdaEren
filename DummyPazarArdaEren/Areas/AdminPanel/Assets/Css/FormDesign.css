@@ -1,0 +1,103 @@
+﻿.form {
+    border: 1px solid #2b7d6b;
+    font-family: Calibri;
+    box-sizing: border-box;
+}
+
+    .form .formtitle {
+        background-color: #025151;
+        padding: 10px;
+        color: #C0C0C0;
+        display: block;
+    }
+
+    .form .formcontent {
+        padding: 15px;
+    }
+
+    .form input[type=text] {
+        width: 97%;
+        padding: 7px;
+        border-radius: 3px;
+        background-color: #175749;
+        border: 1px solid #2b7d6b;
+    }
+
+    .form .dropdown {
+        width: 97%;
+        padding: 7px;
+        border-radius: 3px;
+        background-color: #175749;
+        border: 1px solid #2b7d6b;
+    }
+
+
+    .form textarea {
+        width: 97%;
+        max-width: 97%;
+        padding: 7px;
+        border-radius: 3px;
+        background-color: #175749;
+        border: 1px solid #2b7d6b;
+    }
+
+    .form input[type=submit] {
+        background-color: #175749;
+        color: white;
+        padding: 7px 25px;
+        text-align: center;
+        font-weight: 900;
+        border: 1px solid #025151;
+        border-radius: 5px;
+        margin-top: 10px;
+    }
+
+    .form input[type="submit"]:hover {
+        background-color: #1c6d5b;
+        cursor: pointer;
+    }
+
+.liste {
+    border: 1px solid #2b7d6b;
+}
+
+    .liste tr th {
+        border: 1px solid #2b7d6b;
+    }
+
+    .liste tr td {
+        padding: 10px;
+        border: 1px solid #2b7d6b;
+        text-align:center;
+    }
+
+        .liste tr td a {
+            padding: 5px;
+            background-color: #025151;
+            color: silver;
+            text-decoration: none;
+            border: 1px solid #2b7d6b;
+        }
+            .liste tr td a:hover {
+                background-color: #b13407;
+            }
+
+.pagetitle {
+    background-color: #1d5548;
+    padding: 10px;
+    margin: 5px;
+    border-bottom: 3px solid #2b7d6b;
+    border-right: 3px solid #2b7d6b;
+    text-align:center;
+}
+
+.tablecontainer{
+    align-content:center;
+    display:grid;
+}
+
+.textboxcolored {
+    background-color: #2b7d6b;
+    color: #2b7d6b;
+    
+}

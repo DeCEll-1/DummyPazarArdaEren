@@ -16,6 +16,7 @@ namespace DummyPazarArdaEren.Models
 
         public int ManagerType_ID { get; set; }
         [ForeignKey("ManagerType_ID")]
+
         public virtual ManagerType ManagerType { get; set; }
 
         [Required(ErrorMessage ="Bu Alan Boş Bırakılamaz")]
@@ -31,7 +32,7 @@ namespace DummyPazarArdaEren.Models
 
         [Required(ErrorMessage = "Bu Alan Boş Bırakılamaz")]
         [StringLength(maximumLength: 20,MinimumLength =8, ErrorMessage = "Şifre 8-20 Karakter Arasında Olmalıdır")]
-        public string Passworld { get; set; }
+        public string Password { get; set; }
 
         [Required(ErrorMessage = "Bu Alan Boş Bırakılamaz")]
         [StringLength(maximumLength: 255, ErrorMessage = "En Fazla 255 Karakter Olabilir")]

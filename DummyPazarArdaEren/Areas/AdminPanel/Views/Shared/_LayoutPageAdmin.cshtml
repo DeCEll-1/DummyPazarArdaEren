@@ -5,18 +5,62 @@
     <meta name="viewport" content="width=device-width" />
     <title>@ViewBag.Title</title>
     <link href="~/Areas/AdminPanel/Assets/Css/AdminLayout.css" rel="stylesheet" />
+    <link href="~/Areas/AdminPanel/Assets/Css/FormDesign.css" rel="stylesheet" />
 </head>
-<body>
+<body style="background-color: #2b7d6b">
     <div class="topbar DummyColorsBg-1">
         <a href="" class="cikis DummyColors-5">Çıkış</a>
     </div>
     <nav class="sidebar DummyColorsBg-4">
         <div class="container DummyColorsBg-3 DummyColors-5" style="margin-top:40px !important; padding:30px 20px;">
-            <label><strong>Merhaba Kullanıcı</strong></label><br />
-            <a href="" class="DummyColors-5">Profil</a> <a href="#" class="DummyColors-5">Ayarlar</a>
-        </div>
-        <div class="container ">
 
+            <label><strong>Merhaba Kullanıcı</strong></label><br />
+
+            <hr style="color: #8f2a05"/>
+
+            <a href="" class="DummyColors-5">Profil</a>
+
+            <br />
+
+            >&nbsp;&nbsp;<a href="#" class="DummyColors-5">Ayarlar</a>
+        </div>
+        <div>
+            <ul class="sidebarmenu">
+                @* Kategori *@
+                <li>
+                    Kategori
+                </li>
+
+                <a href="@Url.Action("Index","Category")">
+                <li>
+                    &nbsp;&nbsp;>&nbsp;&nbsp;
+                    Kategori Listesi
+                </li></a>
+
+                <a href="@Url.Action("Create","Category")">
+                <li>
+                    &nbsp;&nbsp;>&nbsp;&nbsp;
+                    Kategori Ekle
+                </li>
+                </a>
+                @* Product *@
+                <li>
+                    Ürünler
+                </li>
+
+                <a href="@Url.Action("Index","ProductTwo")">
+                <li>
+                    &nbsp;&nbsp;>&nbsp;&nbsp;
+                    Ürünler Listesi
+                </li></a>
+
+                <a href="@Url.Action("Create","ProductTwo")">
+                <li>
+                    &nbsp;&nbsp;>&nbsp;&nbsp;
+                    Ürün Ekle
+                </li>
+                </a>
+            </ul>
         </div>
     </nav>
 

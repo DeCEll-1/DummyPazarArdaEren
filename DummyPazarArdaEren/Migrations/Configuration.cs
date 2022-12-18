@@ -17,7 +17,7 @@
         {
             context.ManagerTypes.AddOrUpdate(m => m.ID, new Models.ManagerType() { ID=1, Name="Admin"});
             context.ManagerTypes.AddOrUpdate(m => m.ID, new Models.ManagerType() { ID=2, Name="Moderatör"});
-            context.Managers.AddOrUpdate(m => m.ID, new Models.Manager() { ID=1, Name="Arda",Surname="Eren",Username="DeCell",Mail="Poedx2@gmail.com", ManagerType_ID=1,IsActive=true,Passworld="123456789"});
+            context.Managers.AddOrUpdate(m => m.ID, new Models.Manager() { ID=1, Name="Arda",Surname="Eren",Username="DeCell",Mail="Poedx2@gmail.com", ManagerType_ID=1,IsActive=true,Password="123456789"});
         }
     }
 }
