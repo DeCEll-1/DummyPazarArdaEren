@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using DummyPazarArdaEren.Areas.AdminPanel.Filters;
 
 namespace DummyPazarArdaEren.Areas.AdminPanel.Controllers
 {
@@ -14,13 +15,25 @@ namespace DummyPazarArdaEren.Areas.AdminPanel.Controllers
         // GET: AdminPanel/Category
         public ActionResult Index()
         {
-            return View(db.Categories.ToList());
+            return View(db.Categories.OrderBy(s=>s.TopCategory_ID).ToList());
         }
 
 
+        [ModeratorAuthenticationFilter]
         [HttpGet]
         public ActionResult Create()
         {
+            List<SelectListItem> categories = new List<SelectListItem>();
+            categories.Add(new SelectListItem { Text = "Üst Kategori", Value = "0", Selected = true });
+
+
+            foreach (Categories item in db.Categories.Where(s=>s.TopCategory_ID == null))
+            {
+                categories.Add(new SelectListItem { Text = item.Name, Value = item.ID.ToString(),Selected = false });
+            }
+
+
+            ViewBag.TopCategory_ID = categories;
             return View();
         }
 
@@ -29,6 +42,12 @@ namespace DummyPazarArdaEren.Areas.AdminPanel.Controllers
         {
             if (ModelState.IsValid)
             {
+
+                if (model.TopCategory_ID==0)
+                {
+                    model.TopCategory_ID = null;
+                }
+
                 db.Categories.Add(model);
                 db.SaveChanges();
                 return RedirectToAction("Index");

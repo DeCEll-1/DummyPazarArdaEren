@@ -9,27 +9,17 @@ using System.Web.Mvc.Filters;
 
 namespace DummyPazarArdaEren.Areas.AdminPanel.Filters
 {
-    public class ModeratorAuthenticationFilterAttribute : ActionFilterAttribute, IAuthenticationFilter
+    public class ModeratorAuthenticationFilterAttribute : ActionFilterAttribute
     {
-        DummyPazarModel db = new DummyPazarModel()
-;        public void OnAuthentication(AuthenticationContext filterContext)
+        public override void OnActionExecuted(ActionExecutedContext filterContext)
         {
-            if (string.IsNullOrEmpty(Convert.ToString(filterContext.HttpContext.Session["moderator"])))
+            Manager m = (Manager)filterContext.RequestContext.HttpContext.Session["adminSession"];
+            if (m.ManagerType_ID!=1)
             {
-                filterContext.Result = new HttpUnauthorizedResult();
+                filterContext.RequestContext.HttpContext.Response.Redirect("~/AdminPanel/Views/Error/AuthorizationError.cshtml");
             }
-        }
 
-        public void OnAuthenticationChallenge(AuthenticationChallengeContext filterContext)
-        {
-            List<Manager> managers = db.Managers.ToList();
-            foreach (var item in managers)
-            {
-                if (item.ManagerType_ID == )
-                {
-
-                }
-            }
+            base.OnActionExecuted(filterContext);
         }
     }
 }

@@ -42,5 +42,11 @@ namespace DummyPazarArdaEren.Areas.AdminPanel.Controllers
             }
             return View();
         }
+
+        public ActionResult LogOut()
+        {
+            Session["adminSession"] = null;
+            return RedirectToAction("Index", "Login");
+        }
     }
 }

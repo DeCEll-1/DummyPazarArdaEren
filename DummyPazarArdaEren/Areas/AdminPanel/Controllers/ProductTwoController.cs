@@ -19,6 +19,7 @@ namespace DummyPazarArdaEren.Areas.AdminPanel.Controllers
         {
             return View(db.Products.ToList());
         }
+        [ModeratorAuthenticationFilter]
         [HttpGet]
         public ActionResult Create()
         {

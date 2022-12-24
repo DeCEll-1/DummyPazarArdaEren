@@ -17,6 +17,13 @@
         @using (Html.BeginForm())
         {
             @Html.AntiForgeryToken();
+
+            <div>
+                <br /> 
+                @Html.DropDownListFor(model=>model.TopCategory_ID,new SelectList(ViewBag.TopCategory_ID, "Value","Text"), htmlAttributes: new { @class = "dropdown" })
+            </div>
+
+
             <div>
                 @Html.LabelFor(model => model.Name):
                 <br />
@@ -32,6 +39,7 @@
                 <br />
                 @Html.ValidationMessageFor(model => model.Description)
             </div>
+
             <div>
                 <input type="submit" value="Ürün Ekle" />
             </div>

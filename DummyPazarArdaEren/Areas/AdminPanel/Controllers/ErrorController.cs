@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DummyPazarArdaEren.Areas.AdminPanel.Filters;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -13,7 +14,6 @@ namespace DummyPazarArdaEren.Areas.AdminPanel.Controllers
         {
             return View();
         }
-
         public ActionResult AuthorizationError()
         {
             return View();

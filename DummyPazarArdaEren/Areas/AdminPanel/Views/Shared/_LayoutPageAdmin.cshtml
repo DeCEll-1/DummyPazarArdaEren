@@ -1,4 +1,9 @@
-﻿<!DOCTYPE html>
+﻿@using DummyPazarArdaEren.Models;
+@{
+    Manager kullanici = Session["adminSession"] as Manager;
+}
+
+<!DOCTYPE html>
 
 <html>
 <head>
@@ -9,14 +14,14 @@
 </head>
 <body style="background-color: #2b7d6b">
     <div class="topbar DummyColorsBg-1">
-        <a href="" class="cikis DummyColors-5">Çıkış</a>
+        <a href="@Url.Action("LogOut","Login")" class="cikis DummyColors-5">Çıkış</a>
     </div>
     <nav class="sidebar DummyColorsBg-4">
         <div class="container DummyColorsBg-3 DummyColors-5" style="margin-top:40px !important; padding:30px 20px;">
 
-            <label><strong>Merhaba Kullanıcı</strong></label><br />
+            <label><strong>Merhaba @kullanici.Name</strong></label><br />
 
-            <hr style="color: #8f2a05"/>
+            <hr style="color: #8f2a05" />
 
             <a href="" class="DummyColors-5">Profil</a>
 

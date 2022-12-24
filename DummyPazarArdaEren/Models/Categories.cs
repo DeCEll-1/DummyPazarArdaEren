@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Web;
 
@@ -8,9 +9,17 @@ namespace DummyPazarArdaEren.Models
 {
     public class Categories
     {
-
+        //Eğer çalışmassa verilerin hepsini sil
 
         public int ID { get; set; }
+
+
+        [Display(Name = "ÜstKategori Adı")]
+        public int? TopCategory_ID { get; set; }
+
+
+        [ForeignKey("TopCategory_ID")]
+        public virtual Categories TopCategory { get; set; }
 
 
         [Display(Name = "Kategori Adı")]
@@ -24,5 +33,7 @@ namespace DummyPazarArdaEren.Models
         public string Description { get; set; }
 
         public virtual ICollection<Product> Products { get; set; }
+
+        public virtual ICollection<Categories> Categories_1 { get; set; }
     }
 }
