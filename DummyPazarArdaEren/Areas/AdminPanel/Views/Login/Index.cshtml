@@ -24,7 +24,7 @@
         <div class="loginFormContent">
             @if (ViewBag.message != null)
             {
-                <div style="color: #b13407">@ViewBag.message.Text</div>
+                <div style="color: #b13407">@ViewBag.message</div>
             }
             @using (Html.BeginForm())
             {
@@ -32,10 +32,10 @@
                     <input type="text" name="mail" class="textBox" />
                 </div>
                 <div class="row">
-                    <input type="password" name="password" class="textBox"/>
+                    <input type="password" name="password" class="textBox" />
                 </div>
                 <div class="row">
-                    <input type="submit" value="Giriş Yap" class="textBox"/>
+                    <input type="submit" value="Giriş Yap" class="textBox" />
                 </div>
             }
         </div>
